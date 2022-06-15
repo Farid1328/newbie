@@ -1,0 +1,27 @@
+ <header class="header">
+    <div class="container container--narrow">
+      <a href="/" class="header__logo">
+        <img src="images/logo.svg" alt="GoldSearch Logo" />
+      </a>
+      <nav class="header__nav">
+        <input type="checkbox" id="responsive-menu" />
+        <label for="responsive-menu" class="toggle-menu">
+          <span>Menu</span>
+          <div class="toggle-menu__lines"></div>
+        </label>
+        <ul class="header__menu">
+          <li class="header__menuItem"><a href="{% url 'addgold' %}">Add new gold</a></li>
+          <li class="header__menuItem"><a href="{% url 'index' %}">Projects</a></li>
+          <li class="header__menuItem"><a href="inbox.html">Inbox</a></li>
+          <li class="header__menuItem"><a href="{% url 'profile' user.id %} ">My Account</a></li>
+          {% if user.is_authenticated %}
+          <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+          <li class="header__menuItem"><a href="{% url 'profileform' user.id %}" class="">{{user}}</a></li>
+          {% else %}
+          <li class="header__menuItem"><a href="{% url 'login' %}" class="btn btn--sub">Login</a></li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
+  </header>
+{% block content %} {% endblock content %}
