@@ -33,10 +33,15 @@ def gold(request, pk):
     form = Commentform()
     if request.method == 'POST':
         form = Commentform(request.POST)
-        comment = form.save(commit=False)
-        comment.comment = goldid
-        comment.owner = request.user
-        comment.save()
+        if form.is_valid():
+            human = True
+            comment = form.save(commit=False)
+            comment.comment = goldid
+            comment.owner = request.user
+            comment.save()
+    else:
+        form = Commentform()
+        print('Wrong CAPTCHA')
     context = {'goldid': goldid, 'form': form}
     return render(request, 'qizil/gold_info.html', context)
 

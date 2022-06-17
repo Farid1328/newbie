@@ -54,14 +54,10 @@
            <div class="column">
                 <div class="card project">
                   <a href="{% url 'gold' i.id %}" class="project">
-                    <img  class="project__thumbnail" src="{{i.picture.url}}" alt="project thumbnail" />
+                    <img  class="project__thumbnail" src="{{i.picture.url}}" style="max-height: 100%;" alt="project thumbnail" />
                     <div class="card__body">
                       <h3 class="project__title">{{i.name}}</h3>
-                      <p><a class="project__author" href="">{{i.owner.}}</a></p>
-                      <p class="project--rating">
-                        <span style="font-weight: bold;">92%</span> Postitive
-                        Feedback (62 Votes)
-                      </p>
+                      <p><a class="project__author" href=""></a></p>
 
 
                       </div>

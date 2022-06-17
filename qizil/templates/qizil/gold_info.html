@@ -35,10 +35,7 @@
                     <div class="card__body">
                       <h3 class="project__title">{{goldid.price}}$</h3>
                       <p><a class="project__author" href="profile.html">{{goldid.name}}</a></p>
-                      <p class="project--rating">
-                        <span style="font-weight: bold;">92%</span> Postitive
-                        Feedback (62 Votes)
-                      </p>
+
 
 
                       </div>
@@ -54,10 +51,8 @@
             </p>
           </div>
           <div class="comments">
-            <h3 class="singleProject__subtitle">Feedback</h3>
-            <h5 class="project--rating">
-              36% Postitive Feedback (18 Votes)
-            </h5>
+
+
 
             <form class="form" action="" method="POST">
               {% for i in form %}
@@ -71,9 +66,9 @@
     <div class="commentList">
         {% for i in goldid.comment_set.all %}
               <div class="comment">
-                <a href="">
+                <a href="{% url 'profile' i.owner.id %}">
                   <img class="avatar avatar--md"
-                    src="{{i.user.pic.url}}" alt="user" />
+                    src="{{i.test.profile.pic.url}}" alt="us" />
                 </a>
                 <div class="comment__details">
                   <a href="{% url 'profile' i.owner.id %}" class="comment__author">{{i.owner}}</a>

@@ -11,4 +11,5 @@ urlpatterns = [
     path('delgold/<str:pk>/', views.delgold, name='delgold'),
 
 
+
 ]

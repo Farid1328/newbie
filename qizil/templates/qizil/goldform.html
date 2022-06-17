@@ -16,8 +16,10 @@
 {% if page == 'delete' %}
 <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
+    {{captcha}}
 <h2>Are you sure to delete this project ?</h2>
     <input type="submit" value="Yes">
     <a href="{% url 'index' %}"></a> <input type="reset"value="No">
 </form>
 {% endif %}
+

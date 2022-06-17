@@ -5,6 +5,8 @@ from . forms import Userform, Profileform
 from . models import Profile
 
 
+
+
 def registerpage(request):
     if request.user.is_authenticated:
         return redirect('index')

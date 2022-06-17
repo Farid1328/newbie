@@ -25,12 +25,13 @@ SECRET_KEY = 'django-insecure-0(bo=1t+gv+l^v*^7eu^==*_ecs56xs@v*v3-x&@d_u8ks9ojc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'captcha',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'qizil',
-    'users'
+    'users',
+
 ]
 
 MIDDLEWARE = [
@@ -130,3 +132,7 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+RECAPTCHA_PUBLIC_KEY = '6LdClHEgAAAAADt9lIvrGwMcaZpyubJudoAVzevp'
+RECAPTCHA_PRIVATE_KEY = '6LdClHEgAAAAAKZZwIdiKwuWw_ieAtAjxF99rwFw'

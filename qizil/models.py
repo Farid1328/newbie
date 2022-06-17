@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from users.models import Profile
 
 
 
@@ -22,6 +23,7 @@ class Gold(models.Model):
 class Comment(models.Model):
     comment = models.ForeignKey(Gold, on_delete=models.CASCADE, null=True)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    test = models.ForeignKey(Profile, on_delete=models.CASCADE, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     text = models.TextField()
 
